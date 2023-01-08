@@ -16,15 +16,12 @@ var seguir = true;
 function comienzo(){
     
     shuffleArray(cartas);
-    console.log(cartas);
     let reglas = document.getElementById("reglas");
     let cerrar = document.getElementById("cerrar");
     let carta = document.getElementById("carta");
     let plantarse = document.getElementById("plantarse");
     let Njuego = document.getElementById("juego");
 
-    
-    console.log(puntuacionJug);
     if(document.addEventListener){
         reglas.addEventListener("click",abrir_dialogo);
         cerrar.addEventListener("click",cerrar_dialogo);
@@ -74,7 +71,6 @@ function shuffleArray(inputArray){
 }
 
 function jugador(){
-    console.log(puntuacionJug);
     if(puntuacionJug >= 21) {
         document.getElementById("carta").setAttribute("disabled","true");
     }
@@ -95,7 +91,6 @@ function repartirCarta(){
 function juegoIA(){
     document.getElementById("carta").setAttribute("disabled","true");
     while(seguir){
-        console.log(puntuacionIA);
         if((puntuacionIA >= 18 || puntuacionIA > puntuacionJug) || (puntuacionJug > 21 && puntuacionIA >0)){
             seguir=false;
         }
